@@ -2,24 +2,141 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000507;
-  --foreground: #DEDEDE;
+    /* Primary Colors: */
+    --color-sea-green: #1E8449;
+    --color-dark-pastel-green: #08BC53;
+    --color-anti-flash-while: #DEDEDE;
+    --color-rich-black: #011417;
+    --color-black: #131112FF;
+
+    /* Font Colors: */
+    --text-light: #eFeFF0FF;
+    --text-dark: #262626FF;
+
+    /* Action Colors: */
+    --color-success: #0EFB75;
+    --color-info: #008cff;
+    --color-warning: #FFB700;
+    --color-error: #EB3232;
+
+    /* Animation Durations: */
+    --animation-primary: all .5s cubic-bezier(.7, 0, .3, 1);
+    --animation-fast: all .3s cubic-bezier(.7, 0, .3, 1);
+    --animation-smooth: all .7s cubic-bezier(.7, 0, .3, 1);
+    --animation-slow: all .9s cubic-bezier(.7, 0, .3, 1);
+
+    /* Spacing */
+    --container-spacing: clamp(1em, 4vw, 8em);
+    --section-spacing: clamp(5em, 21vh, 12em);
+    --element-gap: clamp(1.5em, 2vw, 2.5em);
+    --element-inside-gap: 0.2em;
+
+    /* Borders */
+    --border-test: 1px solid red;
+
+    --border-radius: 0.25em;
+    --border-radius-large: 2em;
+    --border-radius-small: 0.5em;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000507;
-    --foreground: #DEDEDE;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: 'Poppins', sans-serif;
+    color: var(--text-light);
+    background-color: var(--color-black);
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100dvw;
+    min-height: 100dvh;
+    cursor: default;
+}
+
+/* ------------------------------------- */
+/* ?REUSABLE CONTENT? */
+/* ------------------------------------- */
+
+/* *CONTAINERS* */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-spacing);
+}
+
+.section {
+    padding: var(--section-spacing) 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/* *TEXT* */
+.intro-title {
+    font-size: 440px;
+    font-weight: 700;
+    letter-spacing: -7%;
+}
+
+.title-font-large {
+    font-size: 160px;
+    font-weight: 700;
+    letter-spacing: -9%;
+}
+
+.title-font-medium {
+    font-size: 154px;
+    font-weight: 500;
+    letter-spacing: 15%;
+}
+
+.title-font-small {
+    font-size: 138px;
+    font-weight: 700;
+    letter-spacing: -8%;
+}
+
+.link-font {
+    font-size: 29px;
+    font-weight: 600;
+    letter-spacing: -7%;
+}
+
+h2 {
+    font-size: 74px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 46px;
+}
+
+h4 {
+    font-size: 38px;
+}
+
+.small-font {
+    font-size: 18px;
+}
+
+/* *BUTTONS* */
+.btn {
+    display: inline-block;
+    padding: 1em 2em;
+    font-size: 29px;
+    font-weight: 600;
+    text-align: center;
+    background-color: var(--color-sea-green);
+    border-radius: var(--border-radius);
+    transition: var(--animation-primary);
 }
